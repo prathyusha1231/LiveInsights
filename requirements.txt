@@ -1,0 +1,6 @@
+streamlit
+pandas
+duckdb
+openpyxl
+python-dotenv
+openai>=1.0.0
