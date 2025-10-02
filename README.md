@@ -17,7 +17,11 @@ If no API key is provided, the app falls back to a heuristic NL→SQL generator.
 
 ## Project Structure
 ```
-├── app_llm.py # Main Streamlit app
+
+├── app_llm.py              # Single-table demo
+├── app_llm_joins.py        # Multi-table demo
+├── utils_data.py           # Shared file loaders, schema helpers
+├── utils_sql.py            # Shared safe_sql, LLM caller
 ├── requirements.txt # Python dependencies
 ├── .env.example # Example environment variables (copy → .env)
 ├── .gitignore # Ignore venv + secrets
