@@ -1,0 +1,19 @@
+List all currently active products with their names and prices.
+
+What was our total revenue in 2019?
+
+In 2019, how many units did we sell per product? 
+
+Which 10 products generated the most revenue in 2019?
+
+Show our monthly revenue trend for 2019.
+
+Which customers placed the most orders in 2019?
+
+What was the avg revenue by customer age group?
+
+For Q4 2019, show revenue by product name, highest to lowest.
+
+Who are the top 10 customers by total revenue in 2019, and when was each customer’s first purchase that year?
+
+Which customers bought more than three distinct products in 2019? Include the distinct product count.

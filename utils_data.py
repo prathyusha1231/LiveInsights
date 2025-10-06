@@ -37,7 +37,7 @@ def schema_hint(df: pd.DataFrame, sample_rows: int = 5) -> str:
     head = df.head(sample_rows).to_dict(orient="records")
     return "Columns:\n" + "\n".join(cols) + "\n\nSample rows:\n" + str(head)
 
-
+'''
 def schema_hint_with_joins(dfs: dict, allowed_joins: list[str]) -> str:
     """
     Generate schema hint for multi-table mode with join keys.
@@ -67,3 +67,4 @@ def detect_join_keys(dfs: dict) -> list[str]:
                 for col in common:
                     joinable.append(f"{t1}.{col} = {t2}.{col}")
     return joinable
+'''

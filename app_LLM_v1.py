@@ -77,9 +77,9 @@ def generate_insights(df_result: pd.DataFrame, question: str, df: pd.DataFrame) 
 
         # Build ID → name/category mapping if available
         mapping_info = []
-        cols = {c.lower(): c for c in df.columns}  # normalize 
+        cols = {c.lower(): c for c in df.columns}   
 
-        if "product_name" in cols:
+        if "product_name" in cols and "product_id" in cols:
             mapping_sample = df[[cols["product_id"], cols["product_name"]]].drop_duplicates().head(50)
             mapping_info.append("Here are sample Product_ID to Product_Name mappings:\n" + mapping_sample.to_string(index=False))
 
@@ -109,7 +109,7 @@ def generate_insights(df_result: pd.DataFrame, question: str, df: pd.DataFrame) 
         """
 
         resp = client.chat.completions.create(
-            model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
+            model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
             messages=[
                 {"role": "system", "content": "You are a data insights assistant."},
                 {"role": "user", "content": prompt},
@@ -142,7 +142,7 @@ def auto_chart(df_result: pd.DataFrame):
     dim_candidates = [c for c in df.columns if c != val_col]
     dim_col = None
 
-    # Prefer explicit date-ish columns
+    # Prefer explicit date columns
     for c in dim_candidates:
         if is_datetime64_any_dtype(df[c]) or re.search(r"date|time|month|year", c, re.I):
             dim_col = c
@@ -156,7 +156,7 @@ def auto_chart(df_result: pd.DataFrame):
             dim_col = non_num[0]
 
     if dim_col is None and dim_candidates:
-        # Fallback to whatever is left
+        # Fallback
         dim_col = dim_candidates[0]
 
     # Single-row → metric

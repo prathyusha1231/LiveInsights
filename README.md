@@ -15,15 +15,28 @@ If no API key is provided, the app falls back to a heuristic NL→SQL generator.
 
 ---
 
+## Updated Features
+- Multi-file upload (CSV/Excel) with robust parsing and DuckDB registration.
+- Join-aware NL→SQL (casts text dates, uses CTEs for intermediate steps).
+- Safe SQL: single-statement `SELECT` only, auto-`LIMIT 200`, cartesian-join warning.
+- Name enrichment in results (e.g., `product_name` next to `product_id`).
+- Auto visuals: KPI for single value, line for time, bar for categories.
+- Auto Insights (LLM): short bullets, prefers human-friendly names over IDs.
+- EXPLAIN-first execution to surface errors early.
+
+---
+
+
 ## Project Structure
 ```
 
-├── app_llm.py              
+├── app_LLM_v1.py              
 ├── app_llm_joins.py        
 ├── utils_data.py           
 ├── utils_sql.py            
 ├── requirements.txt 
 ├── sample_questions.txt 
+├── sample_questions_mulltitable.txt
 ├── .env
 ├── .gitignore 
 └── README.md 

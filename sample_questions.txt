@@ -1,0 +1,12 @@
+Easy (Basic aggregation & counts):
+1. What is the total revenue from all sales?
+2. How many unique products were sold?
+
+Medium (Filters & grouping):
+3. What are the top 5 most sold products?
+4. Show me the monthly sales trend for 2023.
+5. Identify the top 3 customers by total spending in the last quarter.
+
+Hard (Advanced analysis):
+6. Which product category generated the highest revenue, and what percentage of total sales does it represent?
+7. Among customers who purchased more than 5 items, what is their average spending?
